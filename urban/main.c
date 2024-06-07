@@ -1,20 +1,15 @@
 #include <stdio.h>
 #include "urban.h"
+#include "lectura.h"
 
 int main() {
-    int choice;
+    int opcion;
 
     do {
-        printf("\nSistema de Inventario de Tienda de Ropa Urbana\n");
-        printf("1. Ingresar producto\n");
-        printf("2. Editar producto\n");
-        printf("3. Eliminar producto\n");
-        printf("4. Listar productos\n");
-        printf("5. Salir\n");
-        printf("Seleccione una opción: ");
-        scanf("%d", &choice);
+      Menu();
+      opcion = leerEntero("escoja una opcion: ");
 
-        switch (choice) {
+        switch (opcion) {
             case 1:
                 addProduct();
                 break;
@@ -33,7 +28,7 @@ int main() {
             default:
                 printf("Opción no válida. Intente de nuevo.\n");
         }
-    } while (choice != 5);
+    } while (opcion != 5);
 
     return 0;
 }
